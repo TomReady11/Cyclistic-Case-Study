@@ -21,7 +21,7 @@ To begin the data was downloaded via 4 zip files then unzipped and stored in exc
 Due to the size of the datasets I decided to move them to an analysis tool better suited for the task at hand for this I chose to use SQL via BigQuery.
 After uploading all the data I began cleaning and transforming the data further.
 * Calculated the total number of trips, total member trips, total casual trips, memberpercentage of trips and casual percentage of trip for each quarter.
-SELECT 
+SELECT
         TotalTrips,
         TotalMemberTrips,
         TotalCasualTrips,
