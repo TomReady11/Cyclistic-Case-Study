@@ -22,12 +22,13 @@ Due to the size of the datasets I decided to move them to an analysis tool bette
 After uploading all the data I began cleaning and transforming the data further.
 * Calculated the total number of trips, total member trips, total casual trips, memberpercentage of trips and casual percentage of trip for each quarter.
 SELECT
+
         TotalTrips,
         TotalMemberTrips,
         TotalCasualTrips,
         ROUND(TotalMemberTrips/TotalTrips,2)*100 AS MemberPercentage,
         ROUND(TotalCasualTrips/TotalTrips,2)*100 AS CasualPercentage
-FROM 
+        FROM 
         (
         SELECT
                 COUNT(start_time) AS TotalTrips,
@@ -36,6 +37,7 @@ FROM
         FROM
                 `parabolic-hook-393921.cyclistic_case_study.q1`
         )
-~~ Repeat for each quarter 
 
+~ Repeat for each quarter 
 
+[q1 total trips.pdf](https://github.com/TomReady11/Cyclistic-Case-Study/files/12293743/q1.total.trips.pdf)
