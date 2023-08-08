@@ -16,8 +16,8 @@ To begin the data was downloaded via 4 zip files then unzipped and stored in exc
   * ride_date was formated as m/d/y
   * day_of_week was structured as NUMBER with no decimals 1-7
     * 1 = Sunday 7 = Saturday
-  * ride_month structures as NUMBER with no decimals 1-12
-  *  
+  * ride_month structured as NUMBER with no decimals 1-12
 ## BigQuery SQL
 Due to the size of the datasets I decided to move them to an analysis tool better suited for the task at hand for this I chose to use SQL via BigQuery.
-After uploading all the data I began cleaning and transforming the data further. 
+After uploading all the data I began cleaning and transforming the data further.
+* Calculated 
