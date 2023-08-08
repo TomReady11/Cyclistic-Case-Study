@@ -20,4 +20,20 @@ To begin the data was downloaded via 4 zip files then unzipped and stored in exc
 ## BigQuery SQL
 Due to the size of the datasets I decided to move them to an analysis tool better suited for the task at hand for this I chose to use SQL via BigQuery.
 After uploading all the data I began cleaning and transforming the data further.
-* Calculated 
+* Calculated the total number of trips, total member trips, total casual trips, memberpercentage of trips and casual percentage of trip for each quarter.
+SELECT 
+        TotalTrips,
+        TotalMemberTrips,
+        TotalCasualTrips,
+        ROUND(TotalMemberTrips/TotalTrips,2)*100 AS MemberPercentage,
+        ROUND(TotalCasualTrips/TotalTrips,2)*100 AS CasualPercentage
+FROM 
+        (
+        SELECT
+                COUNT(start_time) AS TotalTrips,
+                COUNTIF(usertype = 'Subscriber') AS TotalMemberTrips,
+                COUNTIF(usertype = 'Customer') AS TotalCasualTrips,
+        FROM
+                `parabolic-hook-393921.cyclistic_case_study.q1`
+        )
+~~ Repeat for each quarter
